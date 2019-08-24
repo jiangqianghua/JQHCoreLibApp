@@ -2,15 +2,21 @@ package com.xy.jqhcorelibapp;
 
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
 import com.xy.updaterapplib.AppUpdater;
+import com.xy.updaterapplib.bean.DownloadBean;
 import com.xy.updaterapplib.net.INetCallBack;
+import com.xy.updaterapplib.net.INetDownloadCallBack;
+
+import java.io.File;
 
 public class MainActivity extends AppCompatActivity {
+
     // 更新app按钮
     private AppCompatButton updateAppBtn;
     @Override
@@ -28,17 +34,7 @@ public class MainActivity extends AppCompatActivity {
         updateAppBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AppUpdater.getInstance().getNetManager().get("", new INetCallBack() {
-                    @Override
-                    public void success(String response) {
-                        //
-                    }
-
-                    @Override
-                    public void failed(Throwable throwable) {
-
-                    }
-                });
+                AppUpdater.getInstance().startUpdate(MainActivity.this);
             }
         });
     }
