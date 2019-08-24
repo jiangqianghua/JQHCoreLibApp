@@ -88,6 +88,7 @@ public class UpdateVersionShowDialog extends DialogFragment {
                 // 安装app
                 Log.d("download" , "success");
                 tvUpdate.setEnabled(true);
+                dismiss();
                 AppUtils.installApk(getActivity(), apkFile);
             }
 

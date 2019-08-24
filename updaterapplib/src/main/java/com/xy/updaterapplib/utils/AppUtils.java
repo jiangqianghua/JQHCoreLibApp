@@ -8,6 +8,8 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 
+import androidx.core.content.FileProvider;
+
 import java.io.File;
 
 public class AppUtils {
@@ -31,7 +33,15 @@ public class AppUtils {
         Intent intent = new Intent();
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.setAction(Intent.ACTION_VIEW);
-        Uri uri = Uri.fromFile(apkFile);
+        Uri uri = null;
+
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.N){
+            uri = FileProvider.getUriForFile(activity, activity.getPackageName()+".fileprovider", apkFile);
+            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            intent.addFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+        } else {
+            uri = Uri.fromFile(apkFile);
+        }
         intent.setDataAndType(uri, "application/vnd.android.package-archive");
         activity.startActivity(intent);
 
