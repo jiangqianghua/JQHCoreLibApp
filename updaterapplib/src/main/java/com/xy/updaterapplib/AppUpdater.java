@@ -72,7 +72,11 @@ public class AppUpdater {
             public void failed(Throwable throwable) {
                 Log.d("MainActivity", throwable.getMessage());
             }
-        });
+        },context);
+    }
+
+    public void cancel(Object tag){
+        AppUpdater.getInstance().getNetManager().cancel(tag);
     }
 
 }

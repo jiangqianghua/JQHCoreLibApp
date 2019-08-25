@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -76,12 +77,24 @@ public class UpdateVersionShowDialog extends DialogFragment {
        });
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        AppUpdater.getInstance().getNetManager().cancel(UpdateVersionShowDialog.this);
+    }
+
+    @Override
+    public void dismiss() {
+        super.dismiss();
+        AppUpdater.getInstance().getNetManager().cancel(UpdateVersionShowDialog.this);
+    }
+
     /**
      * 开始下载
      * @param url
      */
     public void startDownload(String url){
-        File targetFile = new File(getActivity().getCacheDir(), "target.apk");
+        final File targetFile = new File(getActivity().getCacheDir(), "target.apk");
         AppUpdater.getInstance().getNetManager().download(url, targetFile, new INetDownloadCallBack() {
             @Override
             public void success(File apkFile) {
@@ -89,7 +102,13 @@ public class UpdateVersionShowDialog extends DialogFragment {
                 Log.d("download" , "success");
                 tvUpdate.setEnabled(true);
                 dismiss();
-                AppUtils.installApk(getActivity(), apkFile);
+                String fileMd5 = AppUtils.getFileMd5(targetFile);
+                Log.d("startDownload", "md5 = " + fileMd5);
+                if(fileMd5 != null && fileMd5.equals(mDownLoadBean.md5)){
+                    AppUtils.installApk(getActivity(), apkFile);
+                } else {
+                    Toast.makeText(getContext(),"Md5检测失败", Toast.LENGTH_SHORT).show();
+                }
             }
 
             @Override
@@ -103,6 +122,6 @@ public class UpdateVersionShowDialog extends DialogFragment {
                 tvUpdate.setEnabled(true);
                 Log.d("download" , "falied " + throwable.getMessage());
             }
-        });
+        },UpdateVersionShowDialog.this);
     }
 }
