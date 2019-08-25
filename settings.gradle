@@ -1,1 +1,1 @@
-include ':app', ':updaterapplib'
+include ':app', ':updaterapplib', ':libpermissionannotion', ':libpermissioncomplier', ':libpermissionhelper'
