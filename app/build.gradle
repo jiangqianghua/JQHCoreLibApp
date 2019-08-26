@@ -41,4 +41,5 @@ dependencies {
     implementation project(path: ':updaterapplib')
     annotationProcessor project(path: ':libpermissioncomplier')
     implementation 'pub.devrel:easypermissions:3.0.0'
+    implementation project(path: ':libuimodule')
 }
