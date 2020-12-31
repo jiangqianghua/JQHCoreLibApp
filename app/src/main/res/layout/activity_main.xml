@@ -13,4 +13,11 @@
         android:layout_height="wrap_content"
         android:text="更新app"/>
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/enter_record"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="enterRecord"
+        android:text="录制"/>
+
 </LinearLayout>
