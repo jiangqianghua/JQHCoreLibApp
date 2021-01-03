@@ -22,6 +22,10 @@ public class CameraHelper implements Camera.PreviewCallback {
         mCameraId = Camera.CameraInfo.CAMERA_FACING_FRONT;
     }
 
+    public void setmPreviewCallback(Camera.PreviewCallback mPreviewCallback) {
+        this.mPreviewCallback = mPreviewCallback;
+    }
+
     public void switchCamera(){
         if (mCameraId == Camera.CameraInfo.CAMERA_FACING_BACK) {
             mCameraId = Camera.CameraInfo.CAMERA_FACING_FRONT;
@@ -93,7 +97,11 @@ public class CameraHelper implements Camera.PreviewCallback {
 
     @Override
     public void onPreviewFrame(byte[] bytes, Camera camera) {
-
+        if (null != mPreviewCallback){
+            nv21ToI420(bytes);
+            mPreviewCallback.onPreviewFrame(i420,camera);
+        }
+        camera.addCallbackBuffer(buffer);
     }
 
     private void nv21ToI420(byte[] data){
