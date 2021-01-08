@@ -12,6 +12,13 @@
         android:layout_height="wrap_content"
         android:text="确认框"/>
 
+    <com.xy.libuimodule.myview.JTextView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:background="#ff00ff"
+        app:jtext_text="江强华"/>
+
     <com.xy.libuimodule.myview.FlowLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">

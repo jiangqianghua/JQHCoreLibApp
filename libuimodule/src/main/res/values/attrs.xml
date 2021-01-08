@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="JTextView">
+        <attr name="jtext_color" format="string"></attr>
+        <attr name="jtext_size" format="dimension"></attr>
+        <attr name="jtext_text" format="string"></attr>
+    </declare-styleable>
+
+</resources>
