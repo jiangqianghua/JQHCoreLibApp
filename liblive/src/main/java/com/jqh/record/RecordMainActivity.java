@@ -58,7 +58,7 @@ public class RecordMainActivity extends AppCompatActivity implements Camera.Prev
 
     public void startRecord(View view){
         String path = this.getExternalCacheDir().getPath();
-        videoCodec.startRecoding(path +"/a.mp4", cameraHelper.getWidth(), cameraHelper.getHeight(),90);
+        videoCodec.startRecoding(path +"/a.mp4", cameraHelper.getWidth(), cameraHelper.getHeight(),0);
     }
 
     public void stopRecord(View view){
