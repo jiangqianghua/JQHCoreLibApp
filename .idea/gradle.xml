@@ -3,11 +3,21 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
-        <compositeConfiguration>
-          <compositeBuild compositeDefinitionSource="SCRIPT" />
-        </compositeConfiguration>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/libgpuimage" />
+            <option value="$PROJECT_DIR$/liblive" />
+            <option value="$PROJECT_DIR$/libpermissionannotion" />
+            <option value="$PROJECT_DIR$/libpermissioncomplier" />
+            <option value="$PROJECT_DIR$/libpermissionhelper" />
+            <option value="$PROJECT_DIR$/libuimodule" />
+            <option value="$PROJECT_DIR$/updaterapplib" />
+          </set>
+        </option>
         <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>

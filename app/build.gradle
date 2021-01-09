@@ -43,4 +43,5 @@ dependencies {
     implementation 'pub.devrel:easypermissions:3.0.0'
     implementation project(path: ':libuimodule')
     implementation project(path: ':liblive')
+    implementation project(path: ':libgpuimage')
 }

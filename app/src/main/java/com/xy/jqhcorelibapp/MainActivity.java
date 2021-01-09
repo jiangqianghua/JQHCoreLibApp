@@ -1,32 +1,20 @@
 package com.xy.jqhcorelibapp;
 
 
-import android.Manifest;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
-import androidx.core.app.ActivityCompat;
 //
 //import com.jqh.libannotion.annotion.PermissionDenied;
 //import com.jqh.libannotion.annotion.PermissionGrant;
 //import com.jqh.libannotion.annotion.PermissionRational;
+import com.jqh.libgpuimage.SimpleActivity;
 import com.jqh.record.RecordMainActivity;
 import com.xy.updaterapplib.AppUpdater;
-import com.xy.updaterapplib.bean.DownloadBean;
-import com.xy.updaterapplib.net.INetCallBack;
-import com.xy.updaterapplib.net.INetDownloadCallBack;
-
-import java.io.File;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -63,6 +51,16 @@ public class MainActivity extends AppCompatActivity {
 
     public void enterRecord(View view){
         Intent intent = new Intent(this, RecordMainActivity.class);
+        startActivity(intent);
+    }
+
+    public void enterGpuImage(View view) {
+        Intent intent = new Intent(this, SimpleActivity.class);
+        startActivity(intent);
+    }
+
+    public void enterGpuImage1(View view) {
+        Intent intent = new Intent(this, jp.co.cyberagent.android.gpuimage.sample.activity.MainActivity.class);
         startActivity(intent);
     }
 }

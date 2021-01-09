@@ -1,2 +1,2 @@
-include ':app', ':updaterapplib', ':libpermissionannotion', ':libpermissioncomplier', ':libpermissionhelper', ':libuimodule', ':liblive'
+include ':app', ':updaterapplib', ':libpermissionannotion', ':libpermissioncomplier', ':libpermissionhelper', ':libuimodule', ':liblive', ':libgpuimage'
 
