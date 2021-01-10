@@ -3,6 +3,7 @@ package com.xy.jqhcorelibapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -13,6 +14,8 @@ import androidx.appcompat.widget.AppCompatButton;
 //import com.jqh.libannotion.annotion.PermissionGrant;
 //import com.jqh.libannotion.annotion.PermissionRational;
 import com.jqh.libgpuimage.SimpleActivity;
+import com.jqh.libproxy.httpprocessor.HttpCallback;
+import com.jqh.libproxy.httpprocessor.HttpHelper;
 import com.jqh.record.RecordMainActivity;
 import com.xy.updaterapplib.AppUpdater;
 
@@ -62,5 +65,20 @@ public class MainActivity extends AppCompatActivity {
     public void enterGpuImage1(View view) {
         Intent intent = new Intent(this, jp.co.cyberagent.android.gpuimage.sample.activity.MainActivity.class);
         startActivity(intent);
+    }
+
+
+    public void testHttpProxy(View view) {
+        HttpHelper.obtain().get("http://www.52res.cn:8888/user/resource/list/filter?page=1&pageSize=8&sortType=2&isVip=0&isPrice=0&isFree=0", null, new HttpCallback<String>() {
+            @Override
+            public void onSuccess(String objResult) {
+                Log.d("MainActivity", "onSuccess = " + objResult);
+            }
+
+            @Override
+            public void onFailure(String e) {
+                Log.d("MainActivity", "onFailure = " + e);
+            }
+        });
     }
 }

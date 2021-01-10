@@ -44,4 +44,5 @@ dependencies {
     implementation project(path: ':libuimodule')
     implementation project(path: ':liblive')
     implementation project(path: ':libgpuimage')
+    implementation project(path: ':libproxy')
 }

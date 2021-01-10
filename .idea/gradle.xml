@@ -14,6 +14,7 @@
             <option value="$PROJECT_DIR$/libpermissionannotion" />
             <option value="$PROJECT_DIR$/libpermissioncomplier" />
             <option value="$PROJECT_DIR$/libpermissionhelper" />
+            <option value="$PROJECT_DIR$/libproxy" />
             <option value="$PROJECT_DIR$/libuimodule" />
             <option value="$PROJECT_DIR$/updaterapplib" />
           </set>

@@ -36,6 +36,14 @@ public class ScreenLive implements  Runnable {
 
     @Override
     public void run() {
+        // 真正推送数据，耗时操作
+
+        if (!connect(url)) {
+            return ;
+        }
+
 
     }
+
+    private native boolean connect(String url);
 }

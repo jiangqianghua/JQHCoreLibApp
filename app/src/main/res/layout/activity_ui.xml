@@ -21,7 +21,8 @@
 
     <com.xy.libuimodule.myview.FlowLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:visibility="gone">
         <Button
             android:layout_width="100dp"
             android:layout_height="50dp"
@@ -87,4 +88,5 @@
             android:layout_height="50dp"
             android:text="button13"/>
     </com.xy.libuimodule.myview.FlowLayout>
+
 </LinearLayout>
