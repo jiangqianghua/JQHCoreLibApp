@@ -38,4 +38,11 @@
         android:text="测试http代理"
         android:onClick="testHttpProxy"
         />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RXJava"
+        android:onClick="rxJavaTest"
+        />
 </LinearLayout>

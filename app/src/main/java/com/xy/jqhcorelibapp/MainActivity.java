@@ -14,6 +14,7 @@ import androidx.appcompat.widget.AppCompatButton;
 //import com.jqh.libannotion.annotion.PermissionGrant;
 //import com.jqh.libannotion.annotion.PermissionRational;
 import com.jqh.libgpuimage.SimpleActivity;
+import com.jqh.libjxjava.RxJavaMainActivity;
 import com.jqh.libproxy.httpprocessor.HttpCallback;
 import com.jqh.libproxy.httpprocessor.HttpHelper;
 import com.jqh.record.RecordMainActivity;
@@ -81,4 +82,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void rxJavaTest(View view) {
+        Intent intent = new Intent(this, RxJavaMainActivity.class);
+        startActivity(intent);
+    }
+
+
 }

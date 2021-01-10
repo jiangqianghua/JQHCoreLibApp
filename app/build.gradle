@@ -45,4 +45,5 @@ dependencies {
     implementation project(path: ':liblive')
     implementation project(path: ':libgpuimage')
     implementation project(path: ':libproxy')
+    implementation project(path: ':libjxjava')
 }
